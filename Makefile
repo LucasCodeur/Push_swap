@@ -13,6 +13,7 @@
 SRC_DIR := src
 OBJ_DIR := obj
 INC_DIR := include
+HEADERS := $(INC_DIR)/push_swap.h
 LIBFT_DIR := libft
 FT_PRINTF_DIR := $(LIBFT_DIR)/ft_printf
 MAKE := $(MAKE) -j --no-print-directory
@@ -33,7 +34,7 @@ all: $(NAME)
 $(NAME): $(OBJ) $(LIBFT)
 	$(CC) $(CFLAGS) $(INC) $(OBJ) $(LIBFT) -o $(NAME)
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HEADERS)
 	@mkdir -p $(OBJ_DIR)
 	$(CC) $(CFLAGS) $(INC) -c $< -o $@
 
