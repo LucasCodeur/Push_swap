@@ -25,9 +25,9 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	while (++j < (size_t)argc && argv[j])
 	{
-		if (parsing(argv[j], &stack_a) == FALSE)
+		if (multiple_check(argv[j], &stack_a) == FALSE)
 			return (1);
-		if (parsing_2(argv[j], &stack_a) == FALSE)
+		if (check_and_create_stack(argv[j], &stack_a) == FALSE)
 			return (1);
 	}
 	if (sort_in_different_cases(&stack_a, &stack_b) == FALSE)

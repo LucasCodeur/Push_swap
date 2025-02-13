@@ -1,46 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   functions_utils.c                                  :+:      :+:    :+:   */
+/*   operations_stack_a_2.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lud-adam <lud-adam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/04 13:47:47 by lud-adam          #+#    #+#             */
-/*   Updated: 2025/02/13 12:26:57 by lud-adam         ###   ########.fr       */
+/*   Created: 2025/02/13 11:55:18 by lud-adam          #+#    #+#             */
+/*   Updated: 2025/02/13 12:50:33 by lud-adam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_abs(int nb)
+void	put_min_on_top_a(t_stack **stack_a, t_stack **stack_b)
 {
-	if (nb < 0)
-		return (-nb);
-	return (nb);
-}
-
-int	write_error(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (write(2, str, i));
-}
-
-t_bool	is_sorted(t_stack **stack_a)
-{
+	t_stack	*min;
 	t_stack	*temp;
-	t_stack	*tail;
 
-	temp = *stack_a;
-	tail = (*stack_a)->prev;
-	while (temp != tail)
+	min = *stack_a;
+	temp = (*stack_a)->next;
+	while (temp != *stack_a)
 	{
-		if (temp->nb > temp->next->nb)
-			return (FALSE);
+		if (temp->nb < min->nb)
+			min = temp;
 		temp = temp->next;
 	}
-	return (TRUE);
+	count_top(stack_a, *stack_a);
+	while (min->top < 0)
+	{
+		rra(stack_a, stack_b);
+		min->top++;
+	}
+	while (min->top > 0)
+	{
+		ra(stack_a, stack_b);
+		min->top--;
+	}
 }

@@ -36,6 +36,8 @@ int		ft_isascii(int c);
 int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
+t_bool	ft_isspace(int c);
+t_bool	ft_is_plus_or_minus(int c);
 
 // 2. String Manipulation Functions
 size_t	ft_strlen(const char *str);

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_small.c                                       :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lud-adam <lud-adam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 16:38:26 by lud-adam          #+#    #+#             */
-/*   Updated: 2025/02/11 16:19:59 by lud-adam         ###   ########.fr       */
+/*   Updated: 2025/02/13 12:50:36 by lud-adam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,32 @@ void	sort_small(t_stack **stack_a, t_stack **stack_b)
 	else
 		sort_4(stack_a, stack_b);
 	return ;
+}
+
+t_bool	sort_in_different_cases(t_stack **stack_a, t_stack **stack_b)
+{
+	if (is_sorted(stack_a) == TRUE)
+		return (TRUE);
+	if (count_nodes(*stack_a) == 1)
+		return (TRUE);
+	if (count_nodes(*stack_a) == 2)
+	{
+		if ((*stack_a)->nb > (*stack_a)->next->nb)
+		{
+			sa(stack_a, stack_b);
+			return (TRUE);
+		}
+		return (TRUE);
+	}
+	if (count_nodes(*stack_a) == 3)
+	{
+		sort_3(stack_a, stack_b);
+		return (TRUE);
+	}
+	if (count_nodes(*stack_a) == 4)
+	{
+		sort_4(stack_a, stack_b);
+		return (TRUE);
+	}
+	return (FALSE);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   count_instruction_2.c                              :+:      :+:    :+:   */
+/*   find_numbers.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lud-adam <lud-adam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 18:26:33 by lud-adam          #+#    #+#             */
-/*   Updated: 2025/01/31 18:06:37 by lud-adam         ###   ########.fr       */
+/*   Updated: 2025/02/13 12:25:40 by lud-adam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,20 +86,4 @@ t_bool	know_if_the_smallest_nb(t_stack *initial_nb, t_stack *stack_to_check)
 		temp = temp->next;
 	}
 	return (is_smallest);
-}
-
-t_stack	*detect_best_count(t_stack **stack)
-{
-	t_stack	*best_count;
-	t_stack	*temp;
-
-	best_count = *stack;
-	temp = (*stack)->next;
-	while (temp != *stack)
-	{
-		if (best_count->count > temp->count)
-			best_count = temp;
-		temp = temp->next;
-	}
-	return (best_count);
 }

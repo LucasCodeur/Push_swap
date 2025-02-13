@@ -10,20 +10,24 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRC_DIR := src
-OBJ_DIR := obj
-INC_DIR := include
-HEADERS := $(INC_DIR)/push_swap.h
-LIBFT_DIR := libft
-FT_PRINTF_DIR := $(LIBFT_DIR)/ft_printf
+SRC_DIR := src/
+OBJ_DIR := obj/
+INC_DIR := include/
+HEADERS := $(INC_DIR)push_swap.h
+LIBFT_DIR := libft/
+FT_PRINTF_DIR := $(LIBFT_DIR)ft_printf
 MAKE := $(MAKE) -j --no-print-directory
 
 SRC = \
-	$(SRC_DIR)/instructions_1.c $(SRC_DIR)/instructions_2.c  $(SRC_DIR)/instructions_3.c  $(SRC_DIR)/instructions_4.c $(SRC_DIR)/instructions_5.c $(SRC_DIR)/create_stack.c $(SRC_DIR)/count_instruction.c $(SRC_DIR)/count_instruction_2.c $(SRC_DIR)/count_instruction_3.c $(SRC_DIR)/sort_small.c $(SRC_DIR)/parsing.c $(SRC_DIR)/parsing_2.c $(SRC_DIR)/parsing_3.c $(SRC_DIR)/compute_count.c $(SRC_DIR)/functions_utils.c $(SRC_DIR)/push_swap.c 
-OBJ := $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
+	$(SRC_DIR)basic_operations.c    $(SRC_DIR)create_stack.c        $(SRC_DIR)functions_utils.c         $(SRC_DIR)operations_stack_a.c  $(SRC_DIR)turk_algo.c \
+	$(SRC_DIR)check_input.c         $(SRC_DIR)main.c                $(SRC_DIR)operations_stack_b.c  $(SRC_DIR)utils_to_compute_count.c \
+	$(SRC_DIR)compute_count.c       $(SRC_DIR)find_correspondant.c  $(SRC_DIR)operations_both_stacks.c  $(SRC_DIR)parsing_utils.c \
+	$(SRC_DIR)count_instructions.c  $(SRC_DIR)find_numbers.c        $(SRC_DIR)operations_stack_a_2.c    $(SRC_DIR)sort.c $(SRC_DIR)tree_operations.c
+
+OBJ := $(SRC:$(SRC_DIR)%.c=$(OBJ_DIR)%.o)
 NAME := push_swap
 
-LIBFT := $(LIBFT_DIR)/libft.a
+LIBFT := $(LIBFT_DIR)libft.a
 
 CC := cc
 CFLAGS := -Wall -Wextra -Werror
@@ -34,7 +38,7 @@ all: $(NAME)
 $(NAME): $(OBJ) $(LIBFT)
 	$(CC) $(CFLAGS) $(INC) $(OBJ) $(LIBFT) -o $(NAME)
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HEADERS)
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c $(HEADERS)
 	@mkdir -p $(OBJ_DIR)
 	$(CC) $(CFLAGS) $(INC) -c $< -o $@
 

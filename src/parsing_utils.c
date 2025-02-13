@@ -1,45 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
+/*   parsing_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lud-adam <lud-adam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 14:35:47 by lud-adam          #+#    #+#             */
-/*   Updated: 2025/01/18 14:47:54 by lud-adam         ###   ########.fr       */
+/*   Updated: 2025/02/13 12:19:51 by lud-adam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-long	ft_atol(const char *string)
-{
-	int		sign;
-	long	result;
-	long	old_value;
-
-	result = 0;
-	sign = 1;
-	while (ft_isspace(*string) == TRUE)
-		string++;
-	if (ft_is_plus_or_minus(*string) == TRUE)
-	{
-		if (*string == '-')
-			sign = -1;
-		string++;
-	}
-	while (ft_isdigit(*string) == TRUE && *string != '\0')
-	{
-		old_value = result;
-		result = result * 10 + (*string - 48);
-		if (old_value > result && sign == 1)
-			return (-1);
-		else if (old_value > result && sign == -1)
-			return (0);
-		string++;
-	}
-	return (result * sign);
-}
 
 int	ft_atoi_handle_overflow(const char *str, t_bool *error)
 {
@@ -68,4 +39,14 @@ int	ft_atoi_handle_overflow(const char *str, t_bool *error)
 	if ((sign == 1 && result > INT_MAX) || (sign == -1 && result < INT_MIN))
 		*error = TRUE;
 	return ((int)result * sign);
+}
+
+void	skip_the_digit(size_t *i, char *str)
+{
+	while (str[*i] && str[*i] == ' ')
+		(*i)++;
+	while (str[*i] && str[*i] != ' ')
+		(*i)++;
+	while (str[*i] && str[*i] == ' ')
+		(*i)++;
 }
