@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   count_instruction.c                                :+:      :+:    :+:   */
+/*   utils_to_compute_count.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lud-adam <lud-adam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 18:58:52 by lud-adam          #+#    #+#             */
-/*   Updated: 2025/02/13 12:00:44 by lud-adam         ###   ########.fr       */
+/*   Updated: 2025/02/13 13:35:09 by lud-adam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static t_memory	*memory_init(t_stack **stack)
 {
 	t_memory	*memory;
 
-	// compute_pos_of_nodes(stack);
+	compute_pos_of_nodes(stack);
 	memory = malloc(sizeof(t_memory));
 	if (!memory)
 		return (NULL);
@@ -47,27 +47,27 @@ size_t	count_nodes(t_stack *stack)
 	return (count);
 }
 
-// void	compute_pos_of_nodes(t_stack **stack)
-// {
-// 	size_t	pos;
-// 	t_stack	*temp;
-// 	t_bool	first_iteration;
-//
-// 	if (!stack || !*stack)
-// 		return ;
-// 	pos = 1;
-// 	temp = *stack;
-// 	temp->top = 0;
-// 	first_iteration = TRUE;
-// 	while (temp != *stack || first_iteration == TRUE)
-// 	{
-// 		first_iteration = FALSE;
-// 		temp->pos = pos;
-// 		temp->top = 0;
-// 		pos++;
-// 		temp = temp->next;
-// 	}
-// }
+void	compute_pos_of_nodes(t_stack **stack)
+{
+	size_t	pos;
+	t_stack	*temp;
+	t_bool	first_iteration;
+
+	if (!stack || !*stack)
+		return ;
+	pos = 1;
+	temp = *stack;
+	temp->top = 0;
+	first_iteration = TRUE;
+	while (temp != *stack || first_iteration == TRUE)
+	{
+		first_iteration = FALSE;
+		temp->pos = pos;
+		temp->top = 0;
+		pos++;
+		temp = temp->next;
+	}
+}
 
 static t_bool	choose_sense_of_loop(t_stack *stack, t_stack *head)
 {
