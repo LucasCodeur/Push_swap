@@ -1,14 +1,12 @@
 # Push_swap
 
-## 🇬🇧
-
-### Overview
+## Overview
 
 **Push_swap** is a project from the **42 curriculum** whose goal is to sort a list of integers using two stacks and a limited set of operations.
 
 The project focuses on designing an **efficient sorting algorithm**, manipulating data structures, and optimizing the number of operations required to sort the list.
 
-### Objectives
+## Objectives
 
 * Manipulate two data stacks.
 * Implement the operations allowed on the stacks.
@@ -17,7 +15,7 @@ The project focuses on designing an **efficient sorting algorithm**, manipulatin
 * Design a sorting strategy adapted to different input sizes.
 * Optimize the number of generated operations.
 
-### Skills Developed
+## Skills Developed
 
 * **C**
 * Data structures
@@ -30,7 +28,7 @@ The project focuses on designing an **efficient sorting algorithm**, manipulatin
 * Edge-case handling
 * Debugging
 
-### Algorithmic Approach
+## Algorithmic Approach
 
 The main challenge of Push_swap is finding a balance between the **simplicity of the algorithm** and the **number of operations generated**.
 
@@ -45,13 +43,13 @@ The project requires thinking about:
 
 This approach provides practical experience with **algorithmic cost**: a program that works is not necessarily an efficient program.
 
-### Constraints
+## Constraints
 
 The sorting process must only use the operations allowed by the 42 project specification, including **push**, **swap**, and **rotate** operations on the two stacks.
 
 The program must also correctly handle invalid inputs and different edge cases.
 
-### What I Learned
+## What I Learned
 
 Push_swap allowed me to deepen my understanding of **algorithm design under constraints**, particularly when looking for strategies that reduce the number of operations.
 
@@ -59,15 +57,15 @@ The project also taught me to analyze **algorithmic complexity**, compare differ
 
 ---
 
-## 🇫🇷
+# Push_swap
 
-### Présentation
+## Présentation
 
 **Push_swap** est un projet du cursus **42** dont l’objectif est de trier une liste d’entiers en utilisant deux piles et un ensemble limité d’opérations.
 
 Le projet met l’accent sur la conception d’un **algorithme de tri efficace**, la manipulation de structures de données et l’optimisation du nombre d’opérations nécessaires pour obtenir une liste triée.
 
-### Objectifs
+## Objectifs
 
 * Manipuler deux piles de données.
 * Implémenter les opérations autorisées sur les piles.
@@ -76,7 +74,7 @@ Le projet met l’accent sur la conception d’un **algorithme de tri efficace**
 * Concevoir une stratégie de tri adaptée à différentes tailles de listes.
 * Optimiser le nombre d’opérations produites.
 
-### Compétences développées
+## Compétences développées
 
 * **C**
 * Structures de données
@@ -89,7 +87,7 @@ Le projet met l’accent sur la conception d’un **algorithme de tri efficace**
 * Gestion des cas limites
 * Debugging
 
-### Approche algorithmique
+## Approche algorithmique
 
 Le principal défi de Push_swap consiste à trouver un compromis entre la **simplicité de l’algorithme** et le **nombre d’opérations générées**.
 
@@ -104,13 +102,13 @@ Le projet demande notamment de réfléchir à :
 
 Cette approche permet de travailler concrètement la notion de **coût algorithmique** : un programme fonctionnel n’est pas nécessairement un programme efficace.
 
-### Contraintes
+## Contraintes
 
 Le tri doit être réalisé uniquement avec les opérations autorisées par le sujet de 42, notamment les opérations de **push**, **swap** et **rotate** sur les deux piles.
 
 Le programme doit également gérer correctement les entrées invalides et les différents cas particuliers.
 
-### Ce que j’ai appris
+## Ce que j’ai appris
 
 Push_swap m’a permis d’approfondir la conception d’algorithmes sous contraintes, en particulier la recherche d’une stratégie permettant de réduire le nombre d’opérations.
 
